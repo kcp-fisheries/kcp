@@ -201,7 +201,6 @@ class App extends Component {
                 }}>
                 Tax Invoice
               </h3>
-              {/* jnjwemnfjmefokmeokfmokfmrokmfokemfo,mofm,eo,okm,foem,oemrf */}
               <div className="row">
                 <div
                   style={{
