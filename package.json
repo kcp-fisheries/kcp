@@ -16,6 +16,7 @@
     "@mui/lab": "5.0.0-alpha.56",
     "@mui/material": "5.2.0",
     "@mui/styles": "5.2.0",
+    "@progress/kendo-drawing": "^1.16.0",
     "@progress/kendo-licensing": "^1.2.1",
     "@progress/kendo-react-pdf": "4.13.0",
     "@testing-library/jest-dom": "^5.16.1",
