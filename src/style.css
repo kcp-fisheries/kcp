@@ -68,10 +68,11 @@ textarea {
 
 section.header-bar {
   padding: 16px;
-  background-color: #eee;
+  background-color: rgb(13, 44, 90);
+  color: #fff;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 

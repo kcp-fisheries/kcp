@@ -1,7 +1,6 @@
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import MobileDatePicker from "@mui/lab/MobileDatePicker";
-import AppBar from "@mui/material/AppBar";
 import FormControl from "@mui/material/FormControl";
 import Grid from "@mui/material/Grid";
 import InputLabel from "@mui/material/InputLabel";
@@ -9,8 +8,6 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -74,21 +71,9 @@ export const Labels = () => {
   };
   return (
     <>
-      <AppBar
-        style={{
-          backgroundColor: "rgb(13, 44, 90)",
-          alignItems: "center",
-        }}
-        position="fixed">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            KCP FISHERIES
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <br />
-      <br />
-      <br />
+      <section className="header-bar">
+        <span className="header">KCP FISHERIES</span>
+      </section>
       <br />
       <Grid container spacing={3}>
         <Grid item xs={12}>
