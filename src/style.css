@@ -1,0 +1,98 @@
+html,
+body,
+div#root {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+}
+th {
+  text-align: left;
+  padding-left: 10px;
+  /* background-color: #5c5cff; */
+  color: #fff;
+}
+td {
+  padding-left: 10px;
+}
+.bold {
+  font-weight: bold;
+}
+.shade {
+  color: #c0c0c0;
+}
+
+div#root {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+section.pdf-body {
+  padding: 16px;
+  background-color: #fff;
+  height: 100%;
+  margin: 8px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex {
+  flex: 1 1 auto;
+}
+
+input,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 8px;
+  margin: 4px;
+}
+
+section.header-bar {
+  padding: 16px;
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+section.header-bar .header {
+  font-size: 1.2em;
+}
+
+section.pdf-toolbar {
+  padding: 16px;
+}
+
+section.pdf-toolbar button {
+  background-color: #fff;
+  border: 1px solid #555;
+  padding: 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+section.pdf-toolbar button:hover,
+section.pdf-toolbar button:focus {
+  border: 1px solid #333;
+  background-color: #eee;
+}
