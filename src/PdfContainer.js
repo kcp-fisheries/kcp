@@ -2,7 +2,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import Button from "@mui/material/Button";
 import React from "react";
 
-export default (props) => {
+export const PdfContainer = (props) => {
   const bodyRef = React.createRef();
   const createPdf = () => props.createPdf(bodyRef.current);
   return (

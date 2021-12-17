@@ -12,6 +12,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { makeStyles } from "@mui/styles";
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setRowsData } from "./counterActions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,26 +36,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const createData = (t) => {
-  let arr = [];
-  let sum = 0;
-  for (let i = 0; i < t.typesCount; i++) {
-    sum += 30000;
-    arr.push({
-      id: i,
-      name: "Katla",
-      num: "1",
-      quantity: 10000,
-      unit: "PCS",
-      priceperunit: 3,
-      amount: 30000,
-      isEditMode: false,
-    });
-  }
-  t.getTotal(sum);
-  return arr;
-};
-
 const CustomTableCell = ({ row, name, onChange }) => {
   const classes = useStyles();
   const { isEditMode } = row;
@@ -73,30 +55,40 @@ const CustomTableCell = ({ row, name, onChange }) => {
   );
 };
 
-function subtotal(items) {
-  return items.map(({ amount }) => amount).reduce((sum, i) => sum + i, 0);
-}
-
 export default function MayTable(props) {
+  const dispatch = useDispatch();
   const [rows, setRows] = React.useState([]);
+  const types2 = useSelector((state) => state.counterReducer.types);
 
   const [subTotal, setSubTotal] = React.useState(
     rows.reduce((prev, cur) => prev + cur.amount, 0)
   );
-  const [types, setTypes] = React.useState(1);
+
   useEffect(() => {
-    if (props && props.typesCount) {
-      setTypes(props.typesCount);
-      setRows(createData(props));
-    }
-  }, [props.typesCount]);
-  const invoiceSubtotal = subtotal(rows);
-  const invoiceTotal = invoiceSubtotal;
+    setRows(createData(types2));
+  }, [types2]);
+
   const [previous, setPrevious] = React.useState({});
   const classes = useStyles();
 
+  const createData = (t) => {
+    let arr = [];
+    for (let i = 0; i < t; i++) {
+      arr.push({
+        id: i,
+        name: "Katla",
+        num: "1",
+        quantity: 10000,
+        unit: "PCS",
+        priceperunit: 3,
+        amount: 30000,
+        isEditMode: false,
+      });
+    }
+    return arr;
+  };
+
   const onToggleEditMode = (id, flag) => {
-    console.log("id= ", id, flag);
     setRows((state) => {
       return rows.map((row) => {
         if (row.id === id) {
@@ -105,13 +97,10 @@ export default function MayTable(props) {
         return row;
       });
     });
-    if (flag == "done" || flag == "revert") {
-      let sum = 0;
-      rows.map((row) => {
-        sum = +row.amount + sum;
-      });
+    if (flag === "done" || flag === "revert") {
+      let sum = rows.reduce((a, b) => +a + (+b["amount"] || 0), 0);
       setSubTotal(sum);
-      props.getTotal(sum);
+      dispatch(setRowsData(rows));
     }
   };
 
@@ -129,6 +118,7 @@ export default function MayTable(props) {
       return row;
     });
     setRows(newRows);
+    dispatch(setRowsData(newRows));
   };
 
   const onRevert = (id, flag) => {
