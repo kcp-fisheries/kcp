@@ -160,7 +160,7 @@ class App extends Component {
         <PdfContainer createPdf={this.createPdf}>
           <React.Fragment>
             <section className="flex-column">
-              <div class="row">
+              <div className="row">
                 <div
                   style={{
                     float: "left",
@@ -184,7 +184,7 @@ class App extends Component {
                   <br />
                   <small>Email: aejazfishkcp@gmail.com</small>
                 </div>
-                <div class="column">
+                <div className="column">
                   <img
                     style={{ width: "100px", height: "100px", float: "right" }}
                     src="https://i.ibb.co/9yKfCmb/KCP-logo.jpg"
@@ -202,7 +202,7 @@ class App extends Component {
                 Tax Invoice
               </h3>
               {/* jnjwemnfjmefokmeokfmokfmrokmfokemfo,mofm,eo,okm,foem,oemrf */}
-              <div class="row">
+              <div className="row">
                 <div
                   style={{
                     float: "left",
@@ -240,7 +240,7 @@ class App extends Component {
               />
 
               {/* jehdbuhenduneudnuenudnue */}
-              <div class="row">
+              <div className="row">
                 <div
                   style={{
                     float: "left",
@@ -265,7 +265,7 @@ class App extends Component {
                 </div>
                 <div style={{ float: "right" }}>
                   <div>
-                    <div class="row">
+                    <div className="row">
                       <div
                         style={{
                           float: "left",

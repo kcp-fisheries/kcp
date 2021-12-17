@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div class="row">
+    <div className="row">
       <div
         style={{
           float: "left",
@@ -23,7 +23,7 @@ export default function Footer() {
       </div>
       <div style={{ float: "right" }}>
         <div>
-          <div class="row">
+          <div className="row">
             <div
               style={{
                 float: "left",

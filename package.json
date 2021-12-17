@@ -16,12 +16,12 @@
     "@mui/lab": "5.0.0-alpha.56",
     "@mui/material": "5.2.0",
     "@mui/styles": "5.2.0",
-    "@progress/kendo-drawing": "1.5.7",
+    "@progress/kendo-licensing": "^1.2.1",
     "@progress/kendo-react-pdf": "4.13.0",
-    "@types/react": "17.0.34",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "@types/react": "17.0.34",
     "date-fns": "^2.27.0",
     "dayjs": "1.10.7",
     "luxon": "2.1.1",
@@ -30,9 +30,9 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.2",
     "rxjs": "6.3.2",
-    "to-words": "^3.0.2"
+    "to-words": "^3.0.2",
+    "web-vitals": "^2.1.2"
   },
   "scripts": {
     "predeploy": "npm run build",
