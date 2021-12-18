@@ -60,10 +60,6 @@ export default function MayTable(props) {
   const [rows, setRows] = React.useState([]);
   const types2 = useSelector((state) => state.counterReducer.types);
 
-  const [subTotal, setSubTotal] = React.useState(
-    rows.reduce((prev, cur) => prev + cur.amount, 0)
-  );
-
   useEffect(() => {
     setRows(createData(types2));
   }, [types2]);
@@ -98,8 +94,6 @@ export default function MayTable(props) {
       });
     });
     if (flag === "done" || flag === "revert") {
-      let sum = rows.reduce((a, b) => +a + (+b["amount"] || 0), 0);
-      setSubTotal(sum);
       dispatch(setRowsData(rows));
     }
   };
@@ -135,6 +129,8 @@ export default function MayTable(props) {
     });
     onToggleEditMode(id, flag);
   };
+
+  const tt = rows.reduce((a, b) => +a + (+b["amount"] || 0), 0);
 
   return (
     <Paper className={classes.root}>
@@ -186,11 +182,11 @@ export default function MayTable(props) {
           <TableRow>
             <TableCell rowSpan={3} />
             <TableCell colSpan={4}>Subtotal</TableCell>
-            <TableCell align="right">{subTotal}</TableCell>
+            <TableCell align="right">{tt}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell colSpan={4}>Total</TableCell>
-            <TableCell align="right">{subTotal}</TableCell>
+            <TableCell align="right">{tt}</TableCell>
           </TableRow>
         </TableBody>
       </Table>
